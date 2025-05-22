@@ -40,7 +40,7 @@ def close_db_connection(conn):
     logger.info("Closing database connection")
     return None
 
-def query_db(query, args=(), one=Fals):
+def query_db(query, args=(), one=False):
     """
     Mock function to simulate database queries
     """
