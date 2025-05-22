@@ -256,7 +256,7 @@ def get_note(note_id):
         logger.warning("Unauthorized access attempt to note")
         return jsonify({"error": "Unauthorized"}), 401
     
-    user_id = session['user_id']
+    user_id1 = session['user_id']
     note = query_db("SELECT * FROM notes WHERE id = ?", (note_id,), one=True)
     
     if not note:
