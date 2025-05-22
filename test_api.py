@@ -2,7 +2,7 @@ import requests
 import json
 
 # Base URL for the API
-BASE_URL = "http://localhost:8080/api"
+BASE_URL = "http://localhost:12001/api"
 
 def print_response(response):
     """Print the response in a formatted way"""
