@@ -1,12 +1,115 @@
-2025-05-22 12:53:20,333 - __main__ - INFO - Starting Notes API server
+nohup: ignoring input
+2025-05-22 14:26:06,899 - app - INFO - Flask application initialized
+2025-05-22 14:26:06,899 - __main__ - INFO - Starting Notes API server
  * Serving Flask app 'app'
  * Debug mode: on
-2025-05-22 12:53:20,351 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+2025-05-22 14:26:06,917 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:8080
- * Running on http://10.2.36.18:8080
-2025-05-22 12:53:20,351 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
-2025-05-22 12:53:20,351 - werkzeug - INFO -  * Restarting with stat
-2025-05-22 12:53:20,501 - __main__ - INFO - Starting Notes API server
-2025-05-22 12:53:20,514 - werkzeug - WARNING -  * Debugger is active!
-2025-05-22 12:53:20,515 - werkzeug - INFO -  * Debugger PIN: 471-420-809
+ * Running on http://127.0.0.1:12001
+ * Running on http://10.2.18.151:12001
+2025-05-22 14:26:06,917 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-22 14:26:06,918 - werkzeug - INFO -  * Restarting with stat
+2025-05-22 14:26:07,069 - app - INFO - Flask application initialized
+2025-05-22 14:26:07,069 - __main__ - INFO - Starting Notes API server
+2025-05-22 14:26:07,082 - werkzeug - WARNING -  * Debugger is active!
+2025-05-22 14:26:07,083 - werkzeug - INFO -  * Debugger PIN: 319-918-606
+2025-05-22 14:26:10,348 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 14:26:10] "GET /api/status HTTP/1.1" 200 -
+2025-05-22 14:26:11,104 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:26:11] "GET / HTTP/1.1" 200 -
+2025-05-22 14:26:14,272 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:26:14] "GET / HTTP/1.1" 200 -
+2025-05-22 14:26:17,432 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:26:17] "GET / HTTP/1.1" 200 -
+2025-05-22 14:26:20,584 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:26:20] "GET / HTTP/1.1" 200 -
+2025-05-22 14:26:23,733 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:26:23] "GET / HTTP/1.1" 200 -
+2025-05-22 14:26:26,880 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:26:26] "GET / HTTP/1.1" 200 -
+2025-05-22 14:26:27,476 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 14:26:27] "GET /api/status HTTP/1.1" 200 -
+2025-05-22 14:26:27,478 - app.crud - INFO - Executing query: SELECT * FROM users WHERE email = ? with args: ('test@example.com',)
+2025-05-22 14:26:27,478 - app.crud - INFO - Executing query: SELECT * FROM users WHERE name = ? with args: ('testuser',)
+2025-05-22 14:26:27,478 - app.crud - INFO - Executing query: INSERT INTO users (name, email, password, admin) VALUES (?, ?, ?, ?) with args: ('testuser', 'test@example.com', 'password123', False)
+2025-05-22 14:26:27,478 - app.crud - INFO - Created new user: {'id': 3, 'name': 'testuser', 'email': 'test@example.com', 'password': 'password123', 'admin': False}
+2025-05-22 14:26:27,478 - app.routes - INFO - User registered successfully: testuser
+2025-05-22 14:26:27,478 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 14:26:27] "[35m[1mPOST /api/register HTTP/1.1[0m" 201 -
+2025-05-22 14:26:27,480 - app.crud - INFO - Executing query: SELECT * FROM users WHERE email = ? with args: ('test@example.com',)
+2025-05-22 14:26:27,480 - app.routes - INFO - User logged in: testuser
+2025-05-22 14:26:27,480 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 14:26:27] "POST /api/login HTTP/1.1" 200 -
+2025-05-22 14:26:27,482 - app.crud - INFO - Executing query: INSERT INTO notes (title, content, owner_id) VALUES (?, ?, ?) with args: ('Test Note', 'This is a test note created by the API test script.', 3)
+2025-05-22 14:26:27,482 - app.crud - INFO - Created new note: {'id': 3, 'title': 'Test Note', 'content': 'This is a test note created by the API test script.', 'owner_id': 3}
+2025-05-22 14:26:27,483 - app.routes - INFO - Note created: Test Note by user 3
+2025-05-22 14:26:27,483 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 14:26:27] "[35m[1mPOST /api/notes HTTP/1.1[0m" 201 -
+2025-05-22 14:26:27,484 - app.crud - INFO - Executing query: SELECT * FROM notes WHERE owner_id = ? with args: (3,)
+2025-05-22 14:26:27,484 - app.routes - INFO - Retrieved 1 notes for user 3
+2025-05-22 14:26:27,485 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 14:26:27] "GET /api/notes HTTP/1.1" 200 -
+2025-05-22 14:26:27,486 - app.crud - INFO - Executing query: SELECT * FROM notes WHERE id = ? with args: (3,)
+2025-05-22 14:26:27,486 - app.routes - INFO - Retrieved note 3 for user 3
+2025-05-22 14:26:27,487 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 14:26:27] "GET /api/notes/3 HTTP/1.1" 200 -
+2025-05-22 14:26:27,488 - app.crud - INFO - Executing query: SELECT * FROM notes WHERE id = ? with args: (3,)
+2025-05-22 14:26:27,488 - app.crud - INFO - Executing query: UPDATE notes SET title = ?, content = ? WHERE id = ? with args: ('Updated Test Note', 'This note has been updated.', 3)
+2025-05-22 14:26:27,488 - app.crud - INFO - Updated note: {'id': 3, 'title': 'Updated Test Note', 'content': 'This note has been updated.', 'owner_id': 3}
+2025-05-22 14:26:27,488 - app.crud - INFO - Executing query: SELECT * FROM notes WHERE id = ? with args: (3,)
+2025-05-22 14:26:27,488 - app.routes - INFO - Note updated: 3 by user 3
+2025-05-22 14:26:27,489 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 14:26:27] "PUT /api/notes/3 HTTP/1.1" 200 -
+2025-05-22 14:26:27,490 - app.crud - INFO - Executing query: SELECT * FROM notes WHERE id = ? with args: (3,)
+2025-05-22 14:26:27,490 - app.crud - INFO - Executing query: DELETE FROM notes WHERE id = ? with args: (3,)
+2025-05-22 14:26:27,490 - app.crud - INFO - Deleted note: {'id': 3, 'title': 'Updated Test Note', 'content': 'This note has been updated.', 'owner_id': 3}
+2025-05-22 14:26:27,490 - app.routes - INFO - Note deleted: 3 by user 3
+2025-05-22 14:26:27,491 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 14:26:27] "DELETE /api/notes/3 HTTP/1.1" 200 -
+2025-05-22 14:26:27,492 - app.crud - INFO - Executing query: SELECT * FROM users WHERE email = ? with args: ('admin@example.com',)
+2025-05-22 14:26:27,492 - app.routes - INFO - User logged in: admin
+2025-05-22 14:26:27,493 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 14:26:27] "POST /api/login HTTP/1.1" 200 -
+2025-05-22 14:26:27,495 - app.crud - INFO - Executing query: SELECT * FROM users with args: ()
+2025-05-22 14:26:27,495 - app.routes - INFO - Admin retrieved user list, count: 3
+2025-05-22 14:26:27,495 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 14:26:27] "GET /api/admin/users HTTP/1.1" 200 -
+2025-05-22 14:26:27,496 - app.routes - INFO - User logged out
+2025-05-22 14:26:27,497 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 14:26:27] "POST /api/logout HTTP/1.1" 200 -
+2025-05-22 14:26:30,025 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:26:30] "GET / HTTP/1.1" 200 -
+2025-05-22 14:26:33,175 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:26:33] "GET / HTTP/1.1" 200 -
+2025-05-22 14:27:22,225 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:27:22] "GET / HTTP/1.1" 200 -
+2025-05-22 14:27:25,393 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:27:25] "GET / HTTP/1.1" 200 -
+2025-05-22 14:27:28,530 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:27:28] "GET / HTTP/1.1" 200 -
+2025-05-22 14:27:31,669 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:27:31] "GET / HTTP/1.1" 200 -
+2025-05-22 14:27:34,829 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:27:34] "GET / HTTP/1.1" 200 -
+2025-05-22 14:27:37,972 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:27:37] "GET / HTTP/1.1" 200 -
+2025-05-22 14:27:41,125 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:27:41] "GET / HTTP/1.1" 200 -
+2025-05-22 14:27:44,272 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:27:44] "GET / HTTP/1.1" 200 -
+2025-05-22 14:27:47,412 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:27:47] "GET / HTTP/1.1" 200 -
+2025-05-22 14:27:50,557 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:27:50] "GET / HTTP/1.1" 200 -
+2025-05-22 14:27:55,480 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 14:27:55] "GET /api/status HTTP/1.1" 200 -
+2025-05-22 14:27:55,764 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:27:55] "GET / HTTP/1.1" 200 -
+2025-05-22 14:28:08,089 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:28:08] "GET / HTTP/1.1" 200 -
+2025-05-22 14:29:09,498 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:29:09] "GET / HTTP/1.1" 200 -
+2025-05-22 14:30:02,313 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:30:02] "GET / HTTP/1.1" 200 -
+2025-05-22 14:30:05,460 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:30:05] "GET / HTTP/1.1" 200 -
+2025-05-22 14:30:08,601 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:30:08] "GET / HTTP/1.1" 200 -
+2025-05-22 14:30:11,746 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:30:11] "GET / HTTP/1.1" 200 -
+2025-05-22 14:30:14,902 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:30:14] "GET / HTTP/1.1" 200 -
+2025-05-22 14:30:18,040 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:30:18] "GET / HTTP/1.1" 200 -
+2025-05-22 14:30:21,233 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:30:21] "GET / HTTP/1.1" 200 -
+2025-05-22 14:30:24,486 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:30:24] "GET / HTTP/1.1" 200 -
+2025-05-22 14:33:34,128 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:33:34] "GET / HTTP/1.1" 200 -
+2025-05-22 14:33:37,278 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:33:37] "GET / HTTP/1.1" 200 -
+2025-05-22 14:33:40,473 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:33:40] "GET / HTTP/1.1" 200 -
+2025-05-22 14:35:34,451 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:35:34] "GET / HTTP/1.1" 200 -
+2025-05-22 14:35:37,607 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:35:37] "GET / HTTP/1.1" 200 -
+2025-05-22 14:35:40,835 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:35:40] "GET / HTTP/1.1" 200 -
+2025-05-22 14:35:44,028 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:35:44] "GET / HTTP/1.1" 200 -
+2025-05-22 14:35:47,197 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:35:47] "GET / HTTP/1.1" 200 -
+2025-05-22 14:35:50,350 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:35:50] "GET / HTTP/1.1" 200 -
+2025-05-22 14:35:53,499 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:35:53] "GET / HTTP/1.1" 200 -
+2025-05-22 14:35:56,643 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:35:56] "GET / HTTP/1.1" 200 -
+2025-05-22 14:35:59,789 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:35:59] "GET / HTTP/1.1" 200 -
+2025-05-22 14:36:02,947 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:36:02] "GET / HTTP/1.1" 200 -
+2025-05-22 14:36:06,099 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:36:06] "GET / HTTP/1.1" 200 -
+2025-05-22 14:36:09,310 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:36:09] "GET / HTTP/1.1" 200 -
+2025-05-22 14:36:12,495 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:36:12] "GET / HTTP/1.1" 200 -
+2025-05-22 14:36:15,643 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:36:15] "GET / HTTP/1.1" 200 -
+2025-05-22 14:36:18,793 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:36:18] "GET / HTTP/1.1" 200 -
+2025-05-22 14:36:21,948 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:36:21] "GET / HTTP/1.1" 200 -
+2025-05-22 14:36:25,095 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:36:25] "GET / HTTP/1.1" 200 -
+2025-05-22 14:36:28,251 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:36:28] "GET / HTTP/1.1" 200 -
+2025-05-22 14:36:31,427 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:36:31] "GET / HTTP/1.1" 200 -
+2025-05-22 14:36:34,637 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:36:34] "GET / HTTP/1.1" 200 -
+2025-05-22 14:36:37,852 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:36:37] "GET / HTTP/1.1" 200 -
+2025-05-22 14:36:41,041 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:36:41] "GET / HTTP/1.1" 200 -
+2025-05-22 14:36:44,253 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:36:44] "GET / HTTP/1.1" 200 -
+2025-05-22 14:36:47,500 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:36:47] "GET / HTTP/1.1" 200 -
+2025-05-22 14:36:50,773 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:36:50] "GET / HTTP/1.1" 200 -
+2025-05-22 14:36:54,089 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:36:54] "GET / HTTP/1.1" 200 -
+2025-05-22 14:36:57,280 - werkzeug - INFO - 10.2.31.12 - - [22/May/2025 14:36:57] "GET / HTTP/1.1" 200 -
